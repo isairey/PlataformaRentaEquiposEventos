@@ -1,0 +1,38 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper function to check if user is authenticated
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+    
+    // Items images
+    match /items/{itemId}/{fileName} {
+      // Anyone can read item images
+      allow read: if true;
+      
+      // Only authenticated users can upload item images
+      allow write: if isAuthenticated() && 
+                      request.resource.size < 10 * 1024 * 1024 && // Max 10MB
+                      request.resource.contentType.matches('image/.*');
+      
+      // Only authenticated users can delete
+      allow delete: if isAuthenticated();
+    }
+    
+    // User profile images
+    match /users/{userId}/{fileName} {
+      // Anyone can read profile images
+      allow read: if true;
+      
+      // Only the user can upload their own profile image
+      allow write: if isAuthenticated() && 
+                      request.auth.uid == userId &&
+                      request.resource.size < 5 * 1024 * 1024 && // Max 5MB
+                      request.resource.contentType.matches('image/.*');
+      
+      // Only the user can delete their own profile image
+      allow delete: if isAuthenticated() && request.auth.uid == userId;
+    }
+  }
+}

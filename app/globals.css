@@ -1,0 +1,48 @@
+@import "tailwindcss";
+
+/* Custom container styles */
+.container-custom {
+  @apply mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl;
+}
+
+/* Custom scrollbar */
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #717171 #F7F7F7;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #F7F7F7;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #717171;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #222222;
+}
+
+/* Skeleton loading animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.skeleton {
+  @apply relative overflow-hidden bg-gray-200;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
