@@ -191,7 +191,7 @@ Sistema de reservaciones y solicitudes.
 # 📂 Estructura del proyecto
 
 ```bash
-ers-event-rental/
+PlataformaRentaEquiposEventos/
 │
 ├── app/                      # Next.js App Router
 │   ├── (auth)/               # Autenticación
@@ -229,7 +229,7 @@ ers-event-rental/
 ## 1️⃣ Clonar repositorio
 
 ```bash
-git clone https://github.com/gitCarrot/ers-event-rental.git
+git clone https://github.com/isairey/PlataformaRentaEquiposEventos.git
 ```
 
 ---
@@ -237,7 +237,7 @@ git clone https://github.com/gitCarrot/ers-event-rental.git
 ## 2️⃣ Entrar al proyecto
 
 ```bash
-cd ers-event-rental
+cd PlataformaRentaEquiposEventos
 ```
 
 ---
@@ -351,30 +351,7 @@ firebase deploy --only storage:rules
 
 ---
 
-# 📸 Vista previa
 
-## 🖥️ Interfaces del sistema
-
-<div align="center">
-
-### 🎪 Página principal
-- Exploración de artículos y eventos
-
-### 🔐 Sistema de autenticación
-- Login y registro de usuarios
-
-### 📦 Catálogo de productos
-- Gestión y búsqueda de artículos
-
-### 📅 Reservaciones
-- Solicitudes y confirmaciones
-
-### 👤 Perfil de usuario
-- Historial y administración personal
-
-</div>
-
----
 
 # 🧠 Objetivos del proyecto
 
